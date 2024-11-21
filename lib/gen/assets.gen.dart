@@ -41,9 +41,22 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/bus_ticket.png
+  AssetGenImage get busTicket =>
+      const AssetGenImage('assets/images/bus_ticket.png');
+
+  /// File path: assets/images/clock.png
+  AssetGenImage get clock => const AssetGenImage('assets/images/clock.png');
+
+  /// File path: assets/images/home.png
+  AssetGenImage get home => const AssetGenImage('assets/images/home.png');
+
   /// File path: assets/images/location.png
   AssetGenImage get location =>
       const AssetGenImage('assets/images/location.png');
+
+  /// File path: assets/images/profile.png
+  AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
 
   /// File path: assets/images/swap_vert.png
   AssetGenImage get swapVert =>
@@ -54,7 +67,8 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/telegram.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [location, swapVert, telegram];
+  List<AssetGenImage> get values =>
+      [busTicket, clock, home, location, profile, swapVert, telegram];
 }
 
 class Assets {

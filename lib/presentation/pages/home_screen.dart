@@ -106,7 +106,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
             padding: const EdgeInsets.all(20.0),
@@ -116,10 +116,10 @@ class HomeScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(38),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
+                  color: Colors.black.withOpacity(0.4),
                   blurRadius: 3,
                   spreadRadius: 1,
-                  offset: const Offset(0, 4),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
@@ -184,7 +184,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
@@ -194,6 +194,7 @@ class HomeScreen extends StatelessWidget {
             ),
             child: Text('SEARCH', style: context.bodyLarge?.copyWith(color: Colors.white)),
           ),
+          const SizedBox(height: 20),
         ],
       ),
     );

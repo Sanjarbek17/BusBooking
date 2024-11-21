@@ -1,4 +1,4 @@
-import 'package:bus_booking/presentation/pages/home_screen.dart';
+import 'package:bus_booking/presentation/pages/appview.dart';
 import 'package:bus_booking/presentation/pages/signin_screen.dart';
 import 'package:bus_booking/presentation/pages/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +12,7 @@ class CustomRouter {
     switch (settings.name) {
       case home:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => const Appview(),
         );
       case signIn:
         return MaterialPageRoute(
