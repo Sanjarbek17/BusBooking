@@ -1,4 +1,5 @@
 import 'package:bus_booking/core/theme/custom_theme.dart';
+import 'package:bus_booking/custom_router.dart';
 import 'package:bus_booking/presentation/pages/signin_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Bus Ticket Booking',
       theme: themeData,
       home: const SigninScreen(),
+      onGenerateRoute: CustomRouter.generateRoute,
+      initialRoute: CustomRouter.signIn,
     );
   }
 }

@@ -1,4 +1,7 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
+import 'package:bus_booking/core/theme/custom_colors.dart';
+import 'package:bus_booking/custom_router.dart';
+import 'package:bus_booking/presentation/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class SigninScreen extends StatelessWidget {
@@ -40,18 +43,18 @@ class SigninScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), minimumSize: const Size(180, 44)),
-                child: Text('Sign In', style: context.labelSmall),
+              const CustomButton(
+                text: 'Sign In',
               ),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Don\'t have an account?', style: context.labelMedium?.copyWith(color: Colors.black, fontWeight: FontWeight.w300)),
+                  Text('Don\'t have an account?', style: context.labelMedium?.copyWith(color: CustomColors.labelMediumBlack, fontWeight: FontWeight.w300)),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, CustomRouter.signUp);
+                    },
                     child: Text('Sign Up', style: context.labelMedium),
                   ),
                 ],

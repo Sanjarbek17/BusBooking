@@ -41,7 +41,7 @@ TextTheme textTheme = const TextTheme(
   ),
   labelMedium: TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     color: CustomColors.labelMediumColor,
     fontFamily: 'Poppins',
   ),
@@ -67,6 +67,8 @@ final ColorScheme colorScheme = ColorScheme.fromSwatch(
     800: Color(0xFFEF6C00),
     900: Color(0xFFE65100),
   }),
+).copyWith(
+  // secondary: const Color(0xff0274BC),
 );
 
 final ThemeData darkThemeData = ThemeData(
