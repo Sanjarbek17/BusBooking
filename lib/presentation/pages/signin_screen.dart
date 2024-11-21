@@ -43,8 +43,11 @@ class SigninScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              const CustomButton(
+              CustomButton(
                 text: 'Sign In',
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(context, CustomRouter.home, (route) => false);
+                },
               ),
               const SizedBox(height: 20),
               Row(

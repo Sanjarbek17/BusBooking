@@ -4,7 +4,7 @@ import 'package:bus_booking/presentation/pages/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomRouter {
-  static const String home = '/';
+  static const String home = '/home';
   static const String signIn = '/sign_in';
   static const String signUp = '/sign_up';
 
