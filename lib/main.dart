@@ -1,3 +1,5 @@
+import 'package:bus_booking/core/theme/custom_theme.dart';
+import 'package:bus_booking/presentation/pages/signin_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bus Ticket Booking',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: themeData,
+      home: const SigninScreen(),
     );
   }
 }
