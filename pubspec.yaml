@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   awesome_extensions: ^2.0.19
   flutter_svg: ^2.0.15
+  equatable: ^2.0.7
  
 
 dev_dependencies:

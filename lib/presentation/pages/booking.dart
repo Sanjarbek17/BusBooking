@@ -1,4 +1,6 @@
+import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:bus_booking/core/theme/custom_colors.dart';
+import 'package:bus_booking/data/dummy_data.dart';
 import 'package:bus_booking/presentation/widgets/chair_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +9,18 @@ class Booking extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> chosenSeats = [];
+
+    void changeSeat(String seat) {
+      if (!seats.contains(seat)) {
+        if (chosenSeats.contains(seat)) {
+          chosenSeats.remove(seat);
+        } else {
+          chosenSeats.add(seat);
+        }
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -83,68 +97,84 @@ class Booking extends StatelessWidget {
                   endIndent: 0,
                 ),
               ),
-              child: DataTable(
-                columnSpacing: 20,
-                dataRowMinHeight: 10,
-                dataRowMaxHeight: 30,
-                headingRowHeight: 30,
-                columns: const [
-                  DataColumn(label: Text(' A', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                  DataColumn(label: Text(' B', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                  DataColumn(label: Text(' C', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                  DataColumn(label: Text('')),
-                  DataColumn(label: Text(' D', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                  DataColumn(label: Text(' E', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                  DataColumn(label: Text(' F', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                ],
-                rows: const [
-                  DataRow(
-                    cells: [
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget(color: CustomColors.blue)),
-                      DataCell(SizedBox(width: 10)),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
+              child: Expanded(
+                child: SingleChildScrollView(
+                  child: DataTable(
+                    columnSpacing: 15,
+                    dataRowMinHeight: 10,
+                    dataRowMaxHeight: 45,
+                    headingRowHeight: 35,
+                    columns: const [
+                      DataColumn(label: Text(' A', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                      DataColumn(label: Text(' B', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                      DataColumn(label: Text(' C', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                      DataColumn(label: Text('')),
+                      DataColumn(label: Text(' D', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                      DataColumn(label: Text(' E', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                      DataColumn(label: Text(' F', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
                     ],
+                    rows: List.generate(15, (index) {
+                      index++;
+                      return DataRow(
+                        cells: [
+                          DataCell(ChairWidget(
+                            isFilled: seats.contains('A$index'),
+                            onTap: () => changeSeat('A$index'),
+                          )),
+                          DataCell(ChairWidget(
+                            isFilled: seats.contains('B$index'),
+                            onTap: () => changeSeat('B$index'),
+                          )),
+                          DataCell(ChairWidget(
+                            isFilled: seats.contains('C$index'),
+                            onTap: () => changeSeat('C$index'),
+                          )),
+                          DataCell(Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 19.0,
+                            ),
+                            child: Text(
+                              index.toString(),
+                              style: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                                color: CustomColors.textColorGrey,
+                              ),
+                            ),
+                          )),
+                          DataCell(ChairWidget(
+                            isFilled: seats.contains('D$index'),
+                            onTap: () => changeSeat('D$index'),
+                          )),
+                          DataCell(ChairWidget(
+                            isFilled: seats.contains('E$index'),
+                            onTap: () => changeSeat('E$index'),
+                          )),
+                          DataCell(ChairWidget(
+                            isFilled: seats.contains('F$index'),
+                            onTap: () => changeSeat('F$index'),
+                          )),
+                        ],
+                      );
+                    }),
                   ),
-                  DataRow(
-                    cells: [
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(SizedBox(width: 10)),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                    ],
-                  ),
-                  DataRow(
-                    cells: [
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(SizedBox(width: 10)),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                    ],
-                  ),
-                  DataRow(
-                    cells: [
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(SizedBox(width: 10)),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                      DataCell(ChairWidget()),
-                    ],
-                  ),
-                ],
+                ),
               ),
-            )
+            ),
+            const SizedBox(height: 16),
+            SafeArea(
+              child: ElevatedButton(
+                onPressed: () {
+                  print(chosenSeats);
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(context.width * 0.8, 50),
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                ),
+                child: const Text('Continue', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Colors.white)),
+              ),
+            ),
           ],
         ),
       ),
