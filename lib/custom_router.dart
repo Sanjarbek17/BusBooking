@@ -1,4 +1,5 @@
 import 'package:bus_booking/presentation/pages/appview.dart';
+import 'package:bus_booking/presentation/pages/booking.dart';
 import 'package:bus_booking/presentation/pages/locations.dart';
 import 'package:bus_booking/presentation/pages/signin_screen.dart';
 import 'package:bus_booking/presentation/pages/signup_screen.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 class CustomRouter {
   static const String home = '/home';
   static const String locations = '/locations';
+  static const String booking = '/booking';
   static const String signIn = '/sign_in';
   static const String signUp = '/sign_up';
 
@@ -19,6 +21,10 @@ class CustomRouter {
       case locations:
         return MaterialPageRoute(
           builder: (_) => const Locations(),
+        );
+      case booking:
+        return MaterialPageRoute(
+          builder: (_) => const Booking(),
         );
       case signIn:
         return MaterialPageRoute(
