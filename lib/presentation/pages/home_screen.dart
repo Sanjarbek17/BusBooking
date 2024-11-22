@@ -1,5 +1,6 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:bus_booking/core/theme/custom_colors.dart';
+import 'package:bus_booking/custom_router.dart';
 import 'package:bus_booking/gen/assets.gen.dart';
 import 'package:bus_booking/presentation/widgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(0.95),
+      backgroundColor: CustomColors.scaffoldBackgroundColor,
       appBar: AppBar(
         leading: const Padding(
           padding: EdgeInsets.only(left: 20.0),
@@ -186,8 +187,11 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, CustomRouter.locations);
+            },
             style: ElevatedButton.styleFrom(
+              elevation: 5,
               minimumSize: const Size(229, 59),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(41)),
               padding: const EdgeInsets.all(20.0),

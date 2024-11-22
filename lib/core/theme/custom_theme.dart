@@ -23,58 +23,65 @@ final ThemeData themeData = ThemeData(
 );
 
 TextTheme textTheme = const TextTheme(
-    displayLarge: TextStyle(
-      color: Colors.white,
-      fontSize: 40,
-      fontWeight: FontWeight.bold,
-      fontFamily: 'Poppins',
-    ),
-    displaySmall: TextStyle(
-      color: Colors.white,
-      fontSize: 16,
-      fontWeight: FontWeight.normal,
-      fontFamily: 'Poppins',
-    ),
-    headlineMedium: TextStyle(
-      fontSize: 25,
-      fontWeight: FontWeight.bold,
-      fontFamily: 'Poppins',
-    ),
-    titleLarge: TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.normal,
-      fontFamily: 'Poppins',
-    ),
-    labelLarge: TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.normal,
-      color: CustomColors.labelLargerColor,
-      fontFamily: 'Poppins',
-    ),
-    labelMedium: TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.w600,
-      color: CustomColors.labelMediumColor,
-      fontFamily: 'Poppins',
-    ),
-    labelSmall: TextStyle(
-      fontSize: 17,
-      fontWeight: FontWeight.w500,
-      color: Colors.white,
-      fontFamily: 'Poppins',
-    ),
-    bodyLarge: TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.bold,
-      color: CustomColors.primaryColor,
-      fontFamily: 'Poppins',
-    ),
-    bodyMedium: TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.normal,
-      color: CustomColors.bodyMediumColor,
-      fontFamily: 'Poppins',
-    ));
+  displayLarge: TextStyle(
+    color: Colors.white,
+    fontSize: 40,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Poppins',
+  ),
+  displaySmall: TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    fontFamily: 'Poppins',
+  ),
+  headlineMedium: TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Poppins',
+  ),
+  titleLarge: TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.normal,
+    fontFamily: 'Poppins',
+  ),
+  labelLarge: TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.normal,
+    color: CustomColors.labelLargerColor,
+    fontFamily: 'Poppins',
+  ),
+  labelMedium: TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: CustomColors.labelMediumColor,
+    fontFamily: 'Poppins',
+  ),
+  labelSmall: TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
+    fontFamily: 'Poppins',
+  ),
+  bodyLarge: TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: CustomColors.primaryColor,
+    fontFamily: 'Poppins',
+  ),
+  bodyMedium: TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    color: CustomColors.bodyMediumColor,
+    fontFamily: 'Poppins',
+  ),
+  bodySmall: TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
+    fontFamily: 'Poppins',
+  ),
+);
 
 final ColorScheme colorScheme = ColorScheme.fromSwatch(
   // primarySwatch: const Color(0xffFD8700),

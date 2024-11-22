@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: themeData,
       home: const SigninScreen(),
       onGenerateRoute: CustomRouter.generateRoute,
-      initialRoute: CustomRouter.home,
+      initialRoute: CustomRouter.locations,
     );
   }
 }
