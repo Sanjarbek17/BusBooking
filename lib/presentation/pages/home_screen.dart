@@ -1,7 +1,7 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:bus_booking/core/theme/custom_colors.dart';
 import 'package:bus_booking/custom_router.dart';
-import 'package:bus_booking/gen/assets.gen.dart';
+import 'package:bus_booking/presentation/widgets/choose_location_widget.dart';
 import 'package:bus_booking/presentation/widgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 
@@ -54,52 +54,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Transform.translate(
                   offset: const Offset(0, 90),
-                  child: Container(
-                    padding: const EdgeInsets.all(38.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(38),
-                      boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 3, spreadRadius: 1, offset: const Offset(0, 4))],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset(Assets.images.telegram.path, width: 40),
-                                const SizedBox(width: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('FROM', style: context.bodyMedium),
-                                    Text('Location 1', style: context.bodyLarge),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 20),
-                            Row(
-                              children: [
-                                Image.asset(Assets.images.location.path, width: 40),
-                                const SizedBox(width: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('TO', style: context.bodyMedium),
-                                    Text('Location 2', style: context.bodyLarge),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Image.asset(Assets.images.swapVert.path),
-                      ],
-                    ),
-                  ),
+                  child: const ChooseLocationWidget(),
                 )
               ],
             ),

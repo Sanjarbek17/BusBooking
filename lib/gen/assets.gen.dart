@@ -64,6 +64,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
 
+  /// File path: assets/images/swap_no_shadow.png
+  AssetGenImage get swapNoShadow =>
+      const AssetGenImage('assets/images/swap_no_shadow.png');
+
   /// File path: assets/images/swap_vert.png
   AssetGenImage get swapVert =>
       const AssetGenImage('assets/images/swap_vert.png');
@@ -73,8 +77,16 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/telegram.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [busTicket, clock, home, location, profile, swapVert, telegram];
+  List<AssetGenImage> get values => [
+        busTicket,
+        clock,
+        home,
+        location,
+        profile,
+        swapNoShadow,
+        swapVert,
+        telegram
+      ];
 }
 
 class Assets {
