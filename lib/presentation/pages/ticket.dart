@@ -1,5 +1,6 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:bus_booking/core/theme/custom_colors.dart';
+import 'package:bus_booking/custom_router.dart';
 import 'package:bus_booking/gen/assets.gen.dart';
 import 'package:bus_booking/presentation/widgets/badge_widget.dart';
 import 'package:bus_booking/presentation/widgets/custom_button.dart';
@@ -25,10 +26,18 @@ class Ticket extends StatelessWidget {
         ),
         title: const Text('Ticket'),
       ),
-      bottomNavigationBar: const SafeArea(
+      bottomNavigationBar: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
-          child: CustomButton(text: 'Continue'),
+          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
+          child: CustomButton(
+            text: 'Continue',
+            onPressed: () {
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                CustomRouter.home,
+                (route) => false,
+              );
+            },
+          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -43,44 +52,19 @@ class Ticket extends StatelessWidget {
                   size: 190.0,
                 ),
                 const SizedBox(height: 16),
-                const Text(
-                  'Booking Code',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.normal,
-                    color: CustomColors.locationColorGrey,
-                  ),
-                ),
+                const Text('Booking Code', style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal, color: CustomColors.locationColorGrey)),
                 const SizedBox(height: 10),
-                const Text(
-                  'BUS01150224',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColors.locationColorBlack,
-                  ),
-                ),
+                const Text('BUS01150224', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.locationColorBlack)),
                 const SizedBox(height: 16),
                 const Text(
                   'Scan the barcode or enter the booking code when getting on the bus.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.normal,
-                    color: CustomColors.locationColorGrey,
-                  ),
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal, color: CustomColors.locationColorGrey),
                 ),
                 const SizedBox(height: 20),
                 const Row(
                   children: [
-                    Text(
-                      'Mon, 19 February 2024',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: CustomColors.locationColorBlack,
-                      ),
-                    ),
+                    Text('Mon, 19 February 2024', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: CustomColors.locationColorBlack)),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -146,27 +130,14 @@ class Ticket extends StatelessWidget {
                 const SizedBox(height: 16),
                 const Row(
                   children: [
-                    Text(
-                      'Customer Name',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: CustomColors.locationColorBlack,
-                      ),
-                    ),
+                    Text('Customer Name', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: CustomColors.locationColorBlack)),
                   ],
                 ),
                 const SizedBox(height: 8),
                 Container(
                   width: context.width,
                   padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: CustomColors.locationColorGrey,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
+                  decoration: BoxDecoration(border: Border.all(color: CustomColors.locationColorGrey, width: 1), borderRadius: BorderRadius.circular(12)),
                   child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -179,14 +150,7 @@ class Ticket extends StatelessWidget {
                 const SizedBox(height: 16),
                 const Row(
                   children: [
-                    Text(
-                      'Payment Details',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: CustomColors.locationColorBlack,
-                      ),
-                    ),
+                    Text('Payment Details', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: CustomColors.locationColorBlack)),
                   ],
                 ),
                 const SizedBox(height: 8),
@@ -216,23 +180,9 @@ class Ticket extends StatelessWidget {
                 const SizedBox(height: 16),
                 const Row(
                   children: [
-                    Text(
-                      'Total',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        color: CustomColors.locationColorBlack,
-                      ),
-                    ),
+                    Text('Total', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: CustomColors.locationColorBlack)),
                     Spacer(),
-                    Text(
-                      'IDR 45.000',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        color: CustomColors.blue,
-                      ),
-                    ),
+                    Text('IDR 45.000', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: CustomColors.blue)),
                   ],
                 ),
               ],
