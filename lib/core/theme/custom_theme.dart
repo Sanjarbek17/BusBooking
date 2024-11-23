@@ -17,7 +17,7 @@ final ThemeData themeData = ThemeData(
     titleTextStyle: textTheme.titleLarge,
     elevation: 0,
     iconTheme: const IconThemeData(
-      color: Colors.black,
+      color: Colors.white,
     ),
   ),
 );

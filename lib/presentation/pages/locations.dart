@@ -10,12 +10,6 @@ class Locations extends StatelessWidget {
     return Scaffold(
       backgroundColor: CustomColors.scaffoldBackgroundColor,
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
         title: const Text('Location1-Location2'),
       ),
       body: Padding(
