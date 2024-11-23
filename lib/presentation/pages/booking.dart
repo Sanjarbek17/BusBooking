@@ -1,5 +1,6 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:bus_booking/core/theme/custom_colors.dart';
+import 'package:bus_booking/custom_router.dart';
 import 'package:bus_booking/data/dummy_data.dart';
 import 'package:bus_booking/presentation/widgets/chair_widget.dart';
 import 'package:flutter/material.dart';
@@ -165,7 +166,10 @@ class Booking extends StatelessWidget {
             SafeArea(
               child: ElevatedButton(
                 onPressed: () {
-                  print(chosenSeats);
+                  Navigator.of(context).pushNamed(
+                    CustomRouter.ticket,
+                    arguments: chosenSeats,
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(context.width * 0.8, 50),

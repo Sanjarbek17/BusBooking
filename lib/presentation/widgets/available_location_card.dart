@@ -20,22 +20,13 @@ class AvailableLocationCard extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(top: 16),
         padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8),
-        ),
+        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
             const Row(
               children: [
-                BadgeWidget(
-                  title: 'Fastest',
-                  color: CustomColors.badgeColorYellow,
-                ),
-                BadgeWidget(
-                  title: 'Mix',
-                  color: CustomColors.badgeColorGrey,
-                ),
+                BadgeWidget(title: 'Fastest', color: CustomColors.badgeColorYellow),
+                BadgeWidget(title: 'Mix', color: CustomColors.badgeColorGrey),
               ],
             ),
             const SizedBox(height: 16),
@@ -49,18 +40,8 @@ class AvailableLocationCard extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: CustomColors.badgeColorGrey,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: const Text(
-                    'Est. 30 min',
-                    style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
+                  decoration: BoxDecoration(color: CustomColors.badgeColorGrey, borderRadius: BorderRadius.circular(8)),
+                  child: const Text('Est. 30 min', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600, color: Colors.black)),
                 ),
                 LocationNameWidget(
                   title: 'Senen',
@@ -79,30 +60,15 @@ class AvailableLocationCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Bus 01',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColors.locationColorBlack,
-                      ),
-                    ),
+                    Text('Bus 01', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: CustomColors.locationColorBlack)),
                     Text.rich(
                       TextSpan(
                         text: 'Arrivall in',
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w600,
-                          color: CustomColors.locationColorGrey,
-                        ),
+                        style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600, color: CustomColors.locationColorGrey),
                         children: [
                           TextSpan(
                             text: ' 03:45 PM',
-                            style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w600,
-                              color: CustomColors.locationColorGrey,
-                            ),
+                            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600, color: CustomColors.locationColorGrey),
                           )
                         ],
                       ),
@@ -113,19 +79,11 @@ class AvailableLocationCard extends StatelessWidget {
                 Text.rich(
                   TextSpan(
                     text: 'IDR 10.000',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: CustomColors.primaryColor,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: CustomColors.primaryColor),
                     children: [
                       TextSpan(
                         text: '/pax',
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w400,
-                          color: CustomColors.locationColorGrey,
-                        ),
+                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color: CustomColors.locationColorGrey),
                       )
                     ],
                   ),

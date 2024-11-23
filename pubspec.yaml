@@ -38,6 +38,7 @@ dependencies:
   awesome_extensions: ^2.0.19
   flutter_svg: ^2.0.15
   equatable: ^2.0.7
+  qr_flutter: ^4.1.0
  
 
 dev_dependencies:
