@@ -1,3 +1,5 @@
+import 'package:awesome_extensions/awesome_extensions.dart';
+import 'package:bus_booking/custom_router.dart';
 import 'package:bus_booking/gen/assets.gen.dart';
 import 'package:bus_booking/presentation/pages/home_screen.dart';
 import 'package:bus_booking/presentation/pages/orders_screen.dart';
@@ -23,6 +25,19 @@ class _AppviewState extends State<Appview> {
           HomeScreen(),
           OrdersScreen(),
         ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, CustomRouter.locations);
+        },
+        style: ElevatedButton.styleFrom(
+          elevation: 5,
+          minimumSize: const Size(229, 59),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(41)),
+          padding: const EdgeInsets.all(20.0),
+        ),
+        child: Text('SEARCH', style: context.bodyLarge?.copyWith(color: Colors.white)),
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.only(bottom: 20),

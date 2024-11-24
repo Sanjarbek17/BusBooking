@@ -1,6 +1,5 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:bus_booking/core/theme/custom_colors.dart';
-import 'package:bus_booking/custom_router.dart';
 import 'package:bus_booking/presentation/widgets/choose_location_widget.dart';
 import 'package:bus_booking/presentation/widgets/passenger_type_widget.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: CustomColors.scaffoldBackgroundColor,
       appBar: AppBar(
         leading: const Padding(
@@ -61,24 +61,10 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+      body: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const PassengerTypeWidget(),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, CustomRouter.locations);
-            },
-            style: ElevatedButton.styleFrom(
-              elevation: 5,
-              minimumSize: const Size(229, 59),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(41)),
-              padding: const EdgeInsets.all(20.0),
-            ),
-            child: Text('SEARCH', style: context.bodyLarge?.copyWith(color: Colors.white)),
-          ),
-          const SizedBox(height: 20),
+          PassengerTypeWidget(),
         ],
       ),
     );

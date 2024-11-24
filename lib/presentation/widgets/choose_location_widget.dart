@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
-import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:bus_booking/gen/assets.gen.dart';
+import 'package:bus_booking/presentation/widgets/location_widget.dart';
 import 'package:flutter/material.dart';
 
 class ChooseLocationWidget extends StatefulWidget {
@@ -49,18 +49,10 @@ class _ChooseLocationWidgetState extends State<ChooseLocationWidget> with Ticker
                     child: child,
                   );
                 },
-                child: Row(
-                  children: [
-                    Image.asset(Assets.images.telegram.path, width: 40),
-                    const SizedBox(width: 10),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('FROM', style: context.bodyMedium),
-                        Text('Location 1', style: context.bodyLarge),
-                      ],
-                    ),
-                  ],
+                child: LocationWidget(
+                  text: 'FROM',
+                  location: 'Location 1',
+                  icon: Image.asset(Assets.images.telegram.path, width: 40),
                 ),
               ),
               const SizedBox(height: 20),
@@ -72,18 +64,10 @@ class _ChooseLocationWidgetState extends State<ChooseLocationWidget> with Ticker
                     child: child,
                   );
                 },
-                child: Row(
-                  children: [
-                    Image.asset(Assets.images.location.path, width: 40),
-                    const SizedBox(width: 10),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('TO', style: context.bodyMedium),
-                        Text('Location 2', style: context.bodyLarge),
-                      ],
-                    ),
-                  ],
+                child: LocationWidget(
+                  text: 'TO',
+                  location: 'Location 2',
+                  icon: Image.asset(Assets.images.location.path, width: 40),
                 ),
               ),
             ],

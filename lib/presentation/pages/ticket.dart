@@ -99,7 +99,7 @@ class Ticket extends StatelessWidget {
                       children: [
                         const Text('Bus 01   ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: CustomColors.locationColorBlack)),
                         SizedBox(
-                          width: context.width * 0.6,
+                          width: context.width * 0.5,
                           child: const Text.rich(
                             TextSpan(
                               text: 'Arrivall in',

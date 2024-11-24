@@ -34,20 +34,23 @@ class Booking extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
               decoration: BoxDecoration(color: CustomColors.cardColorRed, borderRadius: BorderRadius.circular(1.6)),
-              child: const Row(
+              child: Row(
                 children: [
-                  Icon(Icons.schedule, color: CustomColors.textColorRed),
-                  SizedBox(width: 10),
-                  Text.rich(
-                    TextSpan(
-                      text: 'The remaining time of order',
-                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: CustomColors.textColorRed),
-                      children: [
-                        TextSpan(
-                          text: ' 00:07:20',
-                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: CustomColors.textColorRed),
-                        ),
-                      ],
+                  const Icon(Icons.schedule, color: CustomColors.textColorRed),
+                  const SizedBox(width: 10),
+                  SizedBox(
+                    width: context.width * 0.66,
+                    child: const Text.rich(
+                      TextSpan(
+                        text: 'The remaining time of order',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: CustomColors.textColorRed),
+                        children: [
+                          TextSpan(
+                            text: ' 00:07:20',
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: CustomColors.textColorRed),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -94,64 +97,67 @@ class Booking extends StatelessWidget {
               ),
               child: Expanded(
                 child: SingleChildScrollView(
-                  child: DataTable(
-                    columnSpacing: 15,
-                    dataRowMinHeight: 10,
-                    dataRowMaxHeight: 45,
-                    headingRowHeight: 35,
-                    columns: const [
-                      DataColumn(label: Text(' A', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                      DataColumn(label: Text(' B', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                      DataColumn(label: Text(' C', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                      DataColumn(label: Text('')),
-                      DataColumn(label: Text(' D', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                      DataColumn(label: Text(' E', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                      DataColumn(label: Text(' F', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
-                    ],
-                    rows: List.generate(15, (index) {
-                      index++;
-                      return DataRow(
-                        cells: [
-                          DataCell(ChairWidget(
-                            isFilled: seats.contains('A$index'),
-                            onTap: () => changeSeat('A$index'),
-                          )),
-                          DataCell(ChairWidget(
-                            isFilled: seats.contains('B$index'),
-                            onTap: () => changeSeat('B$index'),
-                          )),
-                          DataCell(ChairWidget(
-                            isFilled: seats.contains('C$index'),
-                            onTap: () => changeSeat('C$index'),
-                          )),
-                          DataCell(Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 19.0,
-                            ),
-                            child: Text(
-                              index.toString(),
-                              style: const TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w700,
-                                color: CustomColors.textColorGrey,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: DataTable(
+                      columnSpacing: 15,
+                      dataRowMinHeight: 10,
+                      dataRowMaxHeight: 45,
+                      headingRowHeight: 35,
+                      columns: const [
+                        DataColumn(label: Text(' A', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                        DataColumn(label: Text(' B', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                        DataColumn(label: Text(' C', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                        DataColumn(label: Text('')),
+                        DataColumn(label: Text(' D', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                        DataColumn(label: Text(' E', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                        DataColumn(label: Text(' F', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.labelMediumBlack))),
+                      ],
+                      rows: List.generate(15, (index) {
+                        index++;
+                        return DataRow(
+                          cells: [
+                            DataCell(ChairWidget(
+                              isFilled: seats.contains('A$index'),
+                              onTap: () => changeSeat('A$index'),
+                            )),
+                            DataCell(ChairWidget(
+                              isFilled: seats.contains('B$index'),
+                              onTap: () => changeSeat('B$index'),
+                            )),
+                            DataCell(ChairWidget(
+                              isFilled: seats.contains('C$index'),
+                              onTap: () => changeSeat('C$index'),
+                            )),
+                            DataCell(Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 19.0,
                               ),
-                            ),
-                          )),
-                          DataCell(ChairWidget(
-                            isFilled: seats.contains('D$index'),
-                            onTap: () => changeSeat('D$index'),
-                          )),
-                          DataCell(ChairWidget(
-                            isFilled: seats.contains('E$index'),
-                            onTap: () => changeSeat('E$index'),
-                          )),
-                          DataCell(ChairWidget(
-                            isFilled: seats.contains('F$index'),
-                            onTap: () => changeSeat('F$index'),
-                          )),
-                        ],
-                      );
-                    }),
+                              child: Text(
+                                index.toString(),
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w700,
+                                  color: CustomColors.textColorGrey,
+                                ),
+                              ),
+                            )),
+                            DataCell(ChairWidget(
+                              isFilled: seats.contains('D$index'),
+                              onTap: () => changeSeat('D$index'),
+                            )),
+                            DataCell(ChairWidget(
+                              isFilled: seats.contains('E$index'),
+                              onTap: () => changeSeat('E$index'),
+                            )),
+                            DataCell(ChairWidget(
+                              isFilled: seats.contains('F$index'),
+                              onTap: () => changeSeat('F$index'),
+                            )),
+                          ],
+                        );
+                      }),
+                    ),
                   ),
                 ),
               ),
@@ -173,6 +179,7 @@ class Booking extends StatelessWidget {
                 child: const Text('Continue', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Colors.white)),
               ),
             ),
+            const SizedBox(height: 16),
           ],
         ),
       ),
